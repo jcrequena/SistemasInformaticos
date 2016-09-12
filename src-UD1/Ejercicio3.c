@@ -23,7 +23,7 @@ void printbitsdoble(long long int n) {
     unsigned long long int i=1;
          i = i<<63;
          /*Esta operación, mueve los bits a la izquierda (desplazamineto) tantas veces como mida el número.
-          Como en este caso son 64 bits, el 1 que es 0x00000001 se mueve 63 bits y queda 0x80000000
+          Como en este caso son 64 bits, el 1 que es 0x0000000000000001 se mueve 63 bits y queda 0x8000000000000000
           */
          while (i > 0) {
                  if (n & i) // Este & lógico queda a 1 si en la posición del bit i hay un 1
