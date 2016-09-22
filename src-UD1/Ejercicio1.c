@@ -8,6 +8,6 @@
 
 int main()
 {
-   printf("Storage size for int : %d \n", (int) sizeof(int));
+   printf("Storage size for int : %d \n", (int) sizeof(int)); //Devuelve el tamaño en bytes.
    return 0;
 }
