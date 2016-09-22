@@ -18,3 +18,8 @@ int main()
    printf ("Mínimo y máximo valor del tipo de datos float valor= %f\t\t%f\n",FLT_MIN,FLT_MAX);
    return 0;
 }
+
+//
+//Referencias para códigos de foramtos en la función printf
+//https://msdn.microsoft.com/es-es/library/aa291517(v=vs.71).aspx
+//http://es.cppreference.com/w/cpp/io/c/printf_format
