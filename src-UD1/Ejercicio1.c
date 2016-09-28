@@ -20,6 +20,6 @@ int main()
 }
 
 //
-//Referencias para códigos de foramtos en la función printf
+//Referencias para códigos de formatos en la función printf
 //https://msdn.microsoft.com/es-es/library/aa291517(v=vs.71).aspx
 //http://es.cppreference.com/w/cpp/io/c/printf_format
