@@ -1,8 +1,8 @@
  .data                        #Sección opcional, aunque normalmente necesaria. Es la sección de declaración de las variables del programa.
- hola: .asciiz "hola daw si"  #Se declara la variable hola con la cadena ascii "hola daw si"
+ hola: .asciiz "hola daw si"  #Se declara la variable hola con la cadena ascii "hola daw si".
  .text                        #Sección obligatoria en todos los programas, contiene el conjunto de las instrucciones del programa.
- .globl main                  #Las primeras líneas de la sección .text, obligatorias ya que indican al simulador 
+ .globl main                  #Las primeras líneas de la sección .text, obligatorias ya que indican al simulador .
  main:                        #Donde debe empezar la ejecución del programa (.globl main  y main:).
- la $a0, hola                 #$a0=dirección de memoria donde empieza "cadena"
- li $v0, 4                    #Cargamos el código de operación de impresión de cadenas de texto
- syscall                      #Imprime la cadena como salida
+ la $a0, hola                 #$a0=dirección de memoria donde empieza "cadena".
+ li $v0, 4                    #Cargamos el código de operación de impresión de cadenas de texto.
+ syscall                      #Imprime la cadena como salida.
