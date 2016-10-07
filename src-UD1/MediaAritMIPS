@@ -1,0 +1,13 @@
+#Media aritmética de 3 números
+.text
+.globl main
+main:
+addi $t1,$0,20
+addi $t2,$0,30
+addi $t3,$0,40
+add $t4,$0,$t1
+add $t4,$t4,$t2
+add $t4,$t4,$t3
+addi $t5,$t5,3
+div $t4,$t5
+mflo $t6
