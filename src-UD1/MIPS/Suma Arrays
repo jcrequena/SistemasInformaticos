@@ -12,7 +12,8 @@ main:
 	lw $t2, 0($t1)  #Carga en el registro $t2 la palabra almacenada en la dirección de memoria que contiene el registro $t1 más
 			#el desplazamiento. La nueva dirección calculada debe ser múltiplo de cuatro.
 	addi $t5,$0,0   #Almacena en $t5 el resultado de sumar $0 con 0 ($0=0).
-loop:                   #Inicio del bucle
+#Inicio del bucle
+loop:                  
 	addi $t2,$t2,-1 #Se decrementa en 1 el valor de $t2 que en la primera pasada vale 5.
 	lw $t3, 0($t0)  
 	add $t5,$t5,$t3
@@ -20,6 +21,12 @@ loop:                   #Inicio del bucle
 bne $t2,$0,loop   #Si el valor de $t2 y $0 no es igual se modica el valor del PC para pasar a ejecutar el trozo de código apuntado
 	          #por la etiqueta loop. Es decir, cuando $t2 llegue a 0, se acaba el bucle y la siguiente instrucción es 
 		  #la $a0,fin
+
+
+li $v0,1 #El valor 1 indica que se imprimirá un valor entero. 
+         #Según el número que se ponga en $v0, se imprimirá por pantalla un tipo de dato u otro
+addi $a0,$t5,0 # Almacenamos en $a0 el valor a imprimir (Suma del vector)
+syscall
 
 la $a0, fin               #$a0=dirección de memoria donde empieza la variable fin (cadena de texto).
 li $v0, 4                 #Cargamos el código de operación de impresión de cadenas de texto.
