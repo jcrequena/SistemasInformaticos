@@ -4,7 +4,7 @@
  .text                        #Sección obligatoria en todos los programas, contiene el conjunto de las instrucciones del programa.
  .globl main                  #Las primeras líneas de la sección .text, obligatorias ya que indican al simulador .
  main:                        #Donde debe empezar la ejecución del programa (.globl main  y main:).
- la $a0, hola                 #$a0=dirección de memoria donde empieza "cadena".
+ la $a0, hola                 #$a0=dirección de memoria donde empieza la variable hola (cadena de texto).
  li $v0, 4                    #Cargamos el código de operación de impresión de cadenas de texto.
                               #Cuadro A.10: Códigos asociados a syscall, del manual de Simula3MS.
 syscall #Imprime la cadena como salida.
