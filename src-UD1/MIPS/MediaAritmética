@@ -8,11 +8,12 @@ addi $t3,$0,40
 add $t4,$0,$t1
 add $t4,$t4,$t2
 add $t4,$t4,$t3
-addi $t5,$t5,3
-div $t4,$t5
-mflo $t6
+addi $t5,$t5,3 #Almacenamos en $t5 el número 3, ya que vamos hacer la media de 3 números.
+div $t4,$t5 #Se almacena en el HI el resto y en LO el cociente de dividir $t4 (dividendo) entre $t5(divisor).
+mflo $t6 #Copia el valor almacenado en LO en el registro $t6
 
-li $v0,1 # El valor 1 indica que se imprimirá un valor entero
-addi $a0,$t6,0 # Alamcenamos en $a0 el valor a imprimir (Media+0)
+li $v0,1 #El valor 1 indica que se imprimirá un valor entero. 
+         #Según el número que se ponga en $v0, se imprimirá por pantalla un tipo de dato u otro
+addi $a0,$t6,0 # Almacenamos en $a0 el valor a imprimir (Media+0)
 syscall
 
