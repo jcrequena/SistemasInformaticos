@@ -1,18 +1,29 @@
 #Sumar dos vectores
 .data
+fin: .asciiz "Fin del programa"
 array: .word 10,20,30,40,50
 count: .word 5
 
 .text
 .globl main
 main:
-	la $t0,array 
-	la $t1, count
-	lw $t2, 0($t1)
-	addi $t5,$0,0
-loop:
-	addi $t2,$t2,-1
-	lw $t3, 0($t0)
+	la $t0,array  #$t0=dirección de memoria donde empieza el array.
+	la $t1, count #$t1=dirección de memoria donde empieza la variable count (inicialmente vale 5).
+	lw $t2, 0($t1)  #Carga en el registro $t2 la palabra almacenada en la dirección de memoria que contiene el registro $t1 más
+			#el desplazamiento. La nueva dirección calculada debe ser múltiplo de cuatro.
+	addi $t5,$0,0   #Almacena en $t5 el resultado de sumar $0 con 0 ($0=0).
+loop:                   #Inicio del bucle
+	addi $t2,$t2,-1 #Se decrementa en 1 el valor de $t2 que en la primera pasada vale 5.
+	lw $t3, 0($t0)  
 	add $t5,$t5,$t3
 	addi $t0,$t0,4
-bne $t2,$0,loop
+bne $t2,$0,loop   #Si el valor de $t2 y $0 no es igual se modica el valor del PC para pasar a ejecutar el trozo de código apuntado
+	          #por la etiqueta loop. Es decir, cuando $t2 llegue a 0, se acaba el bucle y la siguiente instrucción es 
+		  #la $a0,fin
+
+la $a0, fin               #$a0=dirección de memoria donde empieza la variable fin (cadena de texto).
+li $v0, 4                 #Cargamos el código de operación de impresión de cadenas de texto.
+                          #Cuadro A.10: Códigos asociados a syscall, del manual de Simula3MS.
+syscall #Imprime la cadena como salida.
+
+
