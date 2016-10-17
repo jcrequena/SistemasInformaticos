@@ -1,0 +1,32 @@
+.data:
+result: .float 0.0
+
+.text
+.globl main
+main:
+#Pido el primer número en float, se guarda en $f12
+li $v0,6
+syscall
+#Pido el segundo número en float y sumamos lo que teníamos (primer número) + el número introducido (segundo número)
+add.s $f12, $f12, $f0
+li $v0,6
+syscall
+#Pido el tercer número en float, sumamos lo que teníamos (primer + segundo número) + el número introducido (tercer número)
+add.s $f12, $f12, $f0
+li $v0,6
+syscall
+
+#Sumamos el tercer número al acumulado.
+add.s $f12, $f12, $f0
+
+
+#Pedimos que se introduzca el divisor
+li $v0,6
+syscall
+#Se almacena en $f3 el número introducido ($f0+$f3)
+add.s $f3, $f0, $f3
+#Dividimos la suma por el divisor
+div.s $f12, $f12, $f3
+#Decimos que vamos a imprimir por pantalla un float (lo que tenga $f12)
+li $v0,2
+syscall
