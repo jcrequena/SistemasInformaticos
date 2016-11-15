@@ -76,7 +76,7 @@ int main(void)
         		}
       	  	} //fin del while read a line 
     	    	fclose (infile);
-	    } // Fin del if ( infile != NULL )
+	} // Fin del if ( infile != NULL )
     	else {
     		perror ("infile");
 	}
