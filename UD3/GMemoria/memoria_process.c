@@ -59,12 +59,11 @@ int main(void)
             			unsigned long i = base;
    	          		unsigned long k = strtol(pf,NULL,16);
    	          		printf("\n La pila tiena un tamaño de: %lx bytes",(k-i));
-				unsigned long base_pila;
-                		long long pila_record;
+				unsigned long base_pila;               		
    	          		for(i;i<=k;i=i+page_size){
    	            			//   printf("\n   %lx",i);
    	 	          		base_pila = (i/page_size)*8;
-                			pila_record;
+                			long long pila_record;
    	 	          		fseek(pagemap,base_pila,SEEK_SET);
                 			fread(&pila_record,sizeof(long long),1,pagemap);
    	 	          		if(pila_record != 0x600000000000000)
