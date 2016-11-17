@@ -71,8 +71,23 @@ int main(void)
    	          		}//fin del for
     	      		}//fin del if --> busca stack o heap en la línea p 
         		if (strstr(tipo_memoria, "heap") != NULL) {
-            			printf(" (montículo)");
-        		}
+				printf(" (monticulo)");
+				unsigned long i = base;
+				unsigned long k = strtol(pf,NULL,16);
+				printf("\n El monticulo tiene un tamaño de: %ld bytes",(k-i));
+				int tam_heap=0; //Variable para llevar el tamaño del heap
+				unsigned long base_pila;
+				for(i;i<=k;i=i+page_size){
+					base_pila = (i/page_size)*8;
+					long long pila_record;
+					fseek(pagemap,base_pila,SEEK_SET);
+					fread(&pila_record,sizeof(long long),1,pagemap);
+					if(pila_record != 0x600000000000000)
+					tam_heap+=page_size;
+					//printf("  %lx: %llx \n",i,pila_record); // muestra long long en hexadecimal
+				}
+				printf(" Pero realmente ocupa %d bytes ",tam_heap);
+			}//fin if heap
       	  	} //fin del while read a line 
     	    	fclose (infile);
 	} // Fin del if ( infile != NULL )
