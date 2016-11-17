@@ -8,7 +8,7 @@ Los punteros, son dinámicos, la memoria que se cree hay que liberarla (heap)
 #include <stdio.h>
 #include <stdlib.h> /*Librería para la gestión dinámica de memoria (malloc, calloc, realloc y free)*/
 #include <string.h>
-#include <unistd.h> /* sysconf(3) */
+#include <unistd.h> /* sysconf(3) --> http://man7.org/linux/man-pages/man3/sysconf.3.html */
 int c=10; //variable global
 int main(void)
 {
@@ -17,15 +17,15 @@ int main(void)
 	*b=10;
 	static int d=10; // Variable estática.
 
-	int pid = getpid();
-	int page_size=sysconf(_SC_PAGESIZE);
+	int pid = getpid(); 
+	int page_size=sysconf(_SC_PAGESIZE); //Llamada al sistema para obtener el tamaño de página en bytes.
 
 	printf("Mi PID es %d\n",pid);
-	printf("El tamaño de página de este sistema es %ld bytes.\n",sysconf(_SC_PAGESIZE));
+	printf("El tamaño de página de este sistema es %d bytes.\n",page_size);
     
 	FILE *infile,*pagemap;
 	char ruta[25];
-	snprintf(ruta, sizeof ruta,"/proc/%d/maps",pid); //construir la ruta de maps
+	snprintf(ruta, sizeof ruta,"/proc/%d/maps",pid); //construir la ruta de maps --> https://linux.die.net/man/3/snprintf
 	infile = fopen(ruta,"r"); // Abrir como lectura el maps
 	snprintf(ruta, sizeof ruta,"/proc/%d/pagemap",pid); //construir la ruta de pagemap
 	pagemap = fopen(ruta,"rb"); // Abrir como lectura en modo binary
