@@ -1,5 +1,12 @@
+/*Las variables globales y las variables locales declaradas con el especificador static tienen duración estática. 
+Se crean antes de que el programa inicie su ejecución y se destruyen cuando el programa termina.
+Las variables locales no static tienen duración automática. 
+Se crean al entrar al bloque en el que fueron declaradas y se destruyen al salir de ese bloque.
+Los punteros, son dinámicos, la memoria que se cree hay que liberarla (heap)
+*/
+
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h> /*Librería para la gestión dinámica de memoria (malloc, calloc, realloc y free)*/
 #include <string.h>
 #include <unistd.h> /* sysconf(3) */
 int c=10; //variable global
