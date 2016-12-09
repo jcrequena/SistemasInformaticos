@@ -7,8 +7,9 @@ int main(int argc, char **argv)
 {
 int fPasswd, fCopia;
 int tam_buffer; // Tamaño del buffer. Lo pedimos por teclado al usuario.
-int bytesLeidos;
+int bytesLeidos,bytesEscritos;
 int resLecturaValor;
+int fragmentacion = 0; //Nos permite ver cuál es la fragmentación interna en el último bloque.
     
 //Comprobar que los parámetros que se pasan en la llamada son los correctos.
 if(argc != 3) {
@@ -52,14 +53,16 @@ if(fCopia == -1) {
 int iContIter = 1;
 while ((bytesLeidos = read(fPasswd,buffer,tam_buffer))>0)
 { 
-		write(fCopia, buffer, bytesLeidos);
-        printf("Iteración %d, leídos/escritos %d bytes\n",iContIter, bytesLeidos);
+	bytesEscritos = write(fCopia, buffer, bytesLeidos);
+        printf("Iteración %d, leídos= %d bytes escritos= %d bytes \n",iContIter, bytesLeidos,bytesEscritos);
         iContIter++;
 }
  //
 // 2 llamadas de open, 2 de close más iContIter*2 de read/write
 //
 printf("Las llamadas al sistema que ha generado este programa son: %d\n",(iContIter*2)+4);
+fragmentacion = (tam_buffer - bytesEscritos); //Calculamos los bytes libres y no utilizados en el último bloque.
+printf("La fragmentación interna en el último bloque es:%d\n",fragmentacion);
     
 // Cerrar ficheros
 close(fPasswd);
