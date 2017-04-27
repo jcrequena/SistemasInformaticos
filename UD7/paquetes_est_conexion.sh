@@ -1,12 +1,13 @@
 #!/bin/bash
-
-for j in {0..2}
+> tcp.tcp
+while read l
 do
-	echo "Paquete $j"
-	cat paquetes.txt | sed -n '/0x0000/,/0x0030/ p' | sed -n "$((j*4+1)),$((j*4+4))p" | head -4 > tcp.tcp
-	for i in $(cat tcp.tcp | sed 's/^\t0x00..:  //g' | tr 'a-f' 'A-F')
-	do
-		echo "obase=2; ibase=16; F$i" | bc | cut -c5-
-	done | tr -d "\n" | fold -32 |sed "s/\([01]\{8\}\)/\1 /g" | sed -n '6,15p' | cat -n
-	echo
-done
+    if [[ $(echo $l | cut -d" " -f1) == '0x0000:' ]]
+    then
+        bits=$(BC_LINE_LENGTH=0 bc <<< "ibase=16;obase=2;F$bytes" | cut -c5-)
+        bytes=""
+           echo $bits | fold -32 | sed -r "s/([01]{8})/\1 /g" | sed -n '6,$p' >> tcp.tcp
+                echo '' >> tcp.tcp
+    fi
+    bytes=$bytes$(echo $l | cut -d" " -f2- | tr -d " " | tr "a-f" "A-F")
+done <<< "$(cat paquetes.txt | grep '0x' | tr -d "\t" | tr -s " ")$(echo -e "\n0x0000:")"
