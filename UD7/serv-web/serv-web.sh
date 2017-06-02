@@ -15,13 +15,6 @@ METHOD=${FIRSTLINE[0]}
 REQUEST=${FIRSTLINE[1]}
 HTTPVER=${FIRSTLINE[2]}
 
-#echo $HTTPVER 503 Service Unavailable
-#echo "Retry-After: 3600"
-#echo "Server: Bash-Maintenance"
-echo $HTTPVER $METHOD
-echo $REQUEST 
-
-
 case "$REQUEST" in
         "/")
                 FILE="daw1-hello.html"
