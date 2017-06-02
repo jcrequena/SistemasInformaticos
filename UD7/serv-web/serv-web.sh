@@ -25,7 +25,7 @@ echo $REQUEST
 case "$REQUEST" in
         "/")
                 FILE="daw1-hello.html"
-				echo "HTTP/1.1 200 OK"
+		echo "HTTP/1.1 200 OK"
                 echo "Content-Type: text/html; charset=utf-8"
                 echo "Content-Length: "$(stat -c%s "$FILE")
                 echo
