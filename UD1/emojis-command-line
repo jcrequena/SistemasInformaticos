@@ -1,0 +1,1 @@
+for i in $(seq 127744 128767); do printf "%02X " $i; echo -n -e \\U$(echo "obase=16;$i"|bc)"\t\t"; done
