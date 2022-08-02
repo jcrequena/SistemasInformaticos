@@ -1,5 +1,5 @@
 .data                        #Sección opcional, aunque normalmente necesaria. Es la sección de declaración de las variables del programa.
- hola: .asciiz "hola daw si"  #Se declara la variable hola con la cadena ascii "hola daw si".
+ hola: .asciiz "hola dam si"  #Se declara la variable hola con la cadena ascii "hola dam si".
                               #Cuadro A.8: Tipos de datos en Simula3MS, del manual de Simula3MS.
  .text                        #Sección obligatoria en todos los programas, contiene el conjunto de las instrucciones del programa.
  .globl main                  #Las primeras líneas de la sección .text, obligatorias ya que indican al simulador .
