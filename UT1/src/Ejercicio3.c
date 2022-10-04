@@ -36,7 +36,7 @@ void printbitsdoble(long long int n) {
 //
 //Función principal
 //
-int main()
+void main()
 {
 
 double realdoble;
@@ -71,6 +71,4 @@ memcpy(&rrealdoble, &realdoble, sizeof(rrealdoble));
 printf("| Doble  |");
 printbitsdoble(rrealdoble);
 printf(" | %llo |  %#018llX | %.20f\n ",rrealdoble,rrealdoble,realdoble);
-
-return 0;
 }
