@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main()
+void main()
 {
    if (0.1 + 0.2 != 0.3) {      
       printf("0.1 + 0.2 NO es igual a 0.3!!\n");}
@@ -22,6 +22,4 @@ int main()
    else {
       printf("Utilizando float en 0.3, 0.1 + 0.2 es igual a 0.3\n");
    }  
-
-   return 0;
 }
