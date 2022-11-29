@@ -1,4 +1,6 @@
 #Creación de usuarios de forma masiva.
+#Ayuda: https://learn.microsoft.com/es-es/powershell/module/microsoft.powershell.localaccounts/new-localuser?view=powershell-5.1
+
 $file_users=Import-Csv -Path usuarios.csv 
 foreach ($user in $file_users) { 
   $clave=ConvertTo-SecureString $user.password -AsPlainText -Force
