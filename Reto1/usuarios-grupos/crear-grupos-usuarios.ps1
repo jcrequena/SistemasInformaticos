@@ -8,7 +8,9 @@ foreach ($group in $file_groups) {
 }
 
 #
-#Creación de usuarios de forma masiva.
+# Creación de usuarios de forma masiva, donde se le dice que:
+# La cuenta y el password sí expira.
+# Debe cambiar la contraseña en el siguiente inicio de sesión
 #Ayuda: https://learn.microsoft.com/es-es/powershell/module/microsoft.powershell.localaccounts/new-localuser?view=powershell-5.1
 #
 
@@ -18,12 +20,7 @@ foreach ($user in $file_users) {
   New-LocalUser $user.cuenta -Password $clave -Description $user.descripcion -AccountNeverExpires -PasswordNeverExpires
  
   #
-  #Establecemos a falso que la cuenta nunca expire.
-  #
-  Set-LocalUser $user.cuenta -PasswordNeverExpires $false
-  
-  #
-  #Solicitar cambio de contraseña en el primer inicio de sesión
+  #Solicitar cambio de contraseña en el siguiente inicio de sesión
   #
   net user $user.cuenta /logonpasswordchg:yes
   
