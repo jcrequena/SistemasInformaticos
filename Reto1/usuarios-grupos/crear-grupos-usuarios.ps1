@@ -17,7 +17,7 @@ foreach ($group in $file_groups) {
 $file_users=Import-Csv -Path usuarios.csv 
 foreach ($user in $file_users) { 
   $clave=ConvertTo-SecureString $user.contraseña -AsPlainText -Force
-  New-LocalUser $user.cuenta -Password $clave -Description $user.descripcion -AccountNeverExpires -PasswordNeverExpires
+  New-LocalUser $user.cuenta -Password $clave -FullName $user.nombre_apellidos -Description $user.descripcion -AccountNeverExpires -PasswordNeverExpires
  
   #
   #Solicitar cambio de contraseña en el siguiente inicio de sesión
