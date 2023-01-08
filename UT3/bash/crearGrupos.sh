@@ -1,5 +1,5 @@
 #!/bin/bash
-while IFS=, nombre Descripcion  
+while IFS=, read nombre Descripcion  
 do
   echo "nombre      -> [${nombre}]"
   echo "Descripcion      -> [${Descripcion}]"
