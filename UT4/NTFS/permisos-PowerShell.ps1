@@ -1,5 +1,9 @@
 #Visualizar los permisos de una carpeta
-Get-NTFSAccess -Path ‘C:\Windows’ | Out-GridView
+Get-NTFSAccess -Path ‘C:\Publico’ | Out-GridView
+
+Get-Acl -Path 'C:\Publico' | format-list
+
+
 
 #Añadir permisos
 #Añadir los permisos a una carpeta
