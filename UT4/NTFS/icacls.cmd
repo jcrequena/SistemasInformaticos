@@ -46,5 +46,5 @@ icacls C:\Documentación\Informatica /remove:g "Usuarios autentificados"
 ::OI - Object inherit    - This folder and files. (no inheritance to subfolders)
 ::CI - Container inherit - This folder and subfolders.
 ::Con la combinación de OI-CI, se aplican los permisos al directorio actual, subdirectorios (CI) y ficheros (OI).
-icacls C:\Documentación\Informatica /GRANT Informatica_RW:(OI)(CI)(RW)
+icacls C:\Documentación\Informatica /GRANT Informatica_RW:(OI)(CI)(R,W)
 icacls C:\Documentación\Informatica /GRANT Direccion_R:(OI)(CI)(R)
