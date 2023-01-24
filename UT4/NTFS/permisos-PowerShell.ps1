@@ -1,26 +1,19 @@
-#Visualizar los permisos de una carpeta
-Get-NTFSAccess -Path ‘C:\Publico’ | Out-GridView
+#Escenario:
+  #Nombre del equipo: Cliente-VPN
+  #usuario: jcrequena
 
-Get-Acl -Path 'C:\Publico' | format-list
+#Directorio al que modificar los permisos
+$PathPublico = "C:\Publico"
 
-
-
-#Añadir permisos
-#Añadir los permisos a una carpeta
-#Al usuario jcrequena - Control Total
-Add-NTFSAccess -Path 'D:\Publico' -Account 'orion\jcrequena' -AccessRights FullControl
-#Lectura para el usuario jcrequena y grupo DepInformatica
-Add-NTFSAccess -Path 'D:\Publico' –Account 'orion\DepInformatica', 'orion\jcrequena' –AccessRights Read
-
-
-
-
-#Al grupo DepInformatica - Control Total
-Add-NTFSAccess -Path 'D:\Publico' -Account 'orion\DepInformatica' -AccessRights FullControl
-#A usuario y a grupo - Control Total
-Add-NTFSAccess -Path 'D:\Publico' -Account 'orion\DepInformatica','orion\jcrequena' -AccessRights FullControl
-
-
-#Eliminar permisos
-#Para Eliminar los permisos a una carpeta
-Remove-NTFSAccess -Path «D:\Publico» -Account 'orion\jcrequena' -AccessRights FullControl
+#Comprobamos si existe el directorio. Si no existe, lo creamos.
+IF (!(test-path $PathPublico))
+{
+		New-Item -Path $PathPublico -type directory -Force
+}
+New-Item -Path 'C:\Publico' -ItemType Directory
+$acl = Get-ACL -Path 'C:\Publico' 
+$ObjectACL = 'Cliente-VPN\jcrequena'
+$new = "$ObjectACL","FullControl","ContainerInherit,ObjectInherit","None","Allow"
+$accessRule = new-object System.Security.AccessControl.FileSystemAccessRule $new
+$acl.SetAccessRule($accessRule)
+set-acl -Path C:\Publico -AclObject $acl
