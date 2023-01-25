@@ -1,6 +1,12 @@
-#Escenario:
-  #Nombre del equipo: Cliente-VPN
-  #usuario: jcrequena
+##################################################################################
+#
+#
+#  Script name: setPermissionsFolder.ps1
+#  Author:      jcrequena
+#  Name Computer: Cliente-VPN
+#  Group: DepLogistica
+#
+##################################################################################
 
 #Get Folder for modify permisssions
 $Path = "C:\Publico"
