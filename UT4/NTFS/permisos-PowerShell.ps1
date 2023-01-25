@@ -2,18 +2,37 @@
   #Nombre del equipo: Cliente-VPN
   #usuario: jcrequena
 
-#Directorio al que modificar los permisos
-$PathPublico = "C:\Publico"
+#Get Folder for modify permisssions
+$Path = "C:\Publico"
 
-#Comprobamos si existe el directorio. Si no existe, lo creamos.
-IF (!(test-path $PathPublico))
+#Check if the directory exists. If it doesn't exist, we create it.
+IF (!(test-path $Path))
 {
-		New-Item -Path $PathPublico -type directory -Force
+   New-Item -Path $Path -type directory -Force
 }
-New-Item -Path 'C:\Publico' -ItemType Directory
-$acl = Get-ACL -Path 'C:\Publico' 
-$ObjectACL = 'Cliente-VPN\jcrequena'
-$new = "$ObjectACL","FullControl","ContainerInherit,ObjectInherit","None","Allow"
-$accessRule = new-object System.Security.AccessControl.FileSystemAccessRule $new
-$acl.SetAccessRule($accessRule)
-set-acl -Path C:\Publico -AclObject $acl
+
+# Get ACL on Folder
+$GetACL = Get-Acl $Path
+
+# Set up AccessRule
+$accessControlType=[System.Security.AccessControl.AccessControlType]::Allow 
+$objectUG=New-Object System.Security.Principal.NTAccount("Cliente-VPN\DepLogistica") 
+$Allinherit = [system.security.accesscontrol.InheritanceFlags]"ContainerInherit, ObjectInherit"
+$Allpropagation = [system.security.accesscontrol.PropagationFlags]"None"
+$Permissions = [System.Security.AccessControl.FileSystemRights]"Read,Write"
+
+$AccessRule = New-Object system.security.AccessControl.FileSystemAccessRule($objectUG, $Permissions, $AllInherit, $Allpropagation, $accessControlType)
+# Check if Access Already Exists
+if ($GetACL.Access | Where { $_.IdentityReference -eq $objectUG}) {
+  Write-Host "Modifying Permissions For: $objectUG" -ForeGroundColor Yellow
+  $AccessModification = New-Object system.security.AccessControl.AccessControlModification
+  $AccessModification.value__ = 2
+  $Modification = $False
+  $GetACL.ModifyAccessRule($AccessModification, $AccessRule, [ref]$Modification) | Out-Null
+} else {
+      Write-Host "Adding Permission: $Permission For: $objectUG"
+      $GetACL.AddAccessRule($AccessRule)
+}
+Set-Acl -aclobject $GetACL -Path $Path
+Write-Host "Permission: $Permission Set For: $objectUG" -ForeGroundColor Green
+
