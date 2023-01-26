@@ -1,5 +1,5 @@
 #!/bin/bash
-#Ejecutar el script como root
+#Ejecutar el script como usuario administrador (sudo)
 #Crear el usuario jcrequena y le asigna como grupo secundario depInformatica
 useradd -G depInformatica jcrequena
 #Le asignamos el passwd al usuario jcrequena
