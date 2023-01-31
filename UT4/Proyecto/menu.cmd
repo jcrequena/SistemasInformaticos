@@ -1,82 +1,61 @@
-
-function fntFuncion1
-{
-  Write-Host "F1"
-}
-
-function fntFuncion2
-{
-  Write-Host "F2"
-}
-
-#----------------Funcion Submenu  -------------#
-function mostrar_Submenu
-{
-     param (
-           [string]$Titulo = 'Submenu.....'
-     )
-     Clear-Host 
-     Write-Host "================ $Titulo ================"
-    
-     Write-Host "1: Opción 1."
-     Write-Host "2: Opción 2."
-     Write-Host "s: Volver al menu principal."
-do
-{
-     $input = Read-Host "Por favor, pulse una opcion"
-     switch ($input)
-     {
-           '1' {
-                'Opcion 1'
-                return
-           } '2' {
-                'Opcion 2'
-                return
-           } 
-     }
-}
-until ($input -eq 'q')
-}
+@echo off
+cls
+title Título de la aplicación
+echo "Bienvenido %USERNAME%"
 
 
-#Función que nos muestra un menú por pantalla con 3 opciones, donde una de ellas es para acceder
-# a un submenú) y una última para salir del mismo.
+::##############
+:: MENU GRÁFICO
+::##############
+:: Cómo hacer un menú
+:: https://www.sevenforums.com/tutorials/78083-batch-files-create-menu-execute-commands.html
 
-function mostrarMenu 
-{ 
-     param ( 
-           [string]$Titulo = 'Selección de opciones' 
-     ) 
-     Clear-Host 
-     Write-Host "================ $Titulo================" 
-      
-     
-     Write-Host "1. Primera Opción" 
-     Write-Host "2. Segunda Opción" 
-     Write-Host "3. Submneu" 
-     Write-Host "s. Presiona 's' para salir" 
-}
-do 
-{ 
-     mostrarMenu 
-     $input = Read-Host "Elegir una Opción" 
-     switch ($input) 
-     { 
-           '1' { 
-                Clear-Host  
-                fntFuncion1 
-                pause
-           } '2' { 
-                Clear-Host  
-                fntFuncion2 
-                pause
-           } '3' {  
-                mostrar_Submenu      
-           } 's' {
-                'Saliendo del script...'
-                return 
-           }  
-     } 
-     pause 
-} 
-until ($input -eq 's')
+:menu
+cls
+echo ++++++++++++++++++++++++++++++++++++++++++++
+echo +Programa de ............
+echo ++++++++++++++++++++++++++++++++++++++++++++
+echo.
+echo Selecciona la opcion deseada
+echo ----------------------------
+echo.
+echo 1. Opcion 1
+echo 2. Opcion 2
+echo 3. Opcion 3
+echo 4. Opcion 4
+echo S. Salir de la aplicacion.
+echo.
+
+:: Aquí creamos el menú de selección.
+
+set /p opcionMenu=Selecciona la opcion (1, 2, 3, 4 o S) y pulsa ENTER:
+if %opcionMenu%==1 goto opcion1
+if %opcionMenu%==2 goto opcion2
+if %opcionMenu%==3 goto opcion3
+if %opcionMenu%==4 goto opcion4
+if %opcionMenu%==S goto fin
+:: Si no se pulsa ninguna de las opciones, volvemos al menú
+echo "Pulsa una opcion valida"
+pause >null
+
+:: ###########################
+:: ZONA DE ETIQUETAS/FUNCIONES
+:: ###########################
+:opcion4
+  ECHO "Has pulsado 4"
+  pause >null
+  goto menu
+:opcion3
+  echo "Has pulsado 3"
+  pause 
+  goto menu
+:opcion2
+  echo "Has pulsado 2"
+  pause >null
+  goto menu
+:opcion1
+  echo "Has pulsado 1"
+  pause 
+  goto menu
+:fin
+echo "Nos vamos de la App......."
