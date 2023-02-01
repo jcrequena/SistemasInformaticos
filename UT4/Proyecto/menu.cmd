@@ -3,6 +3,14 @@ cls
 title Título de la aplicación
 echo "Bienvenido %USERNAME%"
 
+REM http://www.patorjk.com/software/taag/
+echo  __ _____  ___                                  
+echo  __ / // ___/ / _ \ ___  ___ _ __ __ ___  ___  ___ _
+echo / // // /__  / , _// -_)/ _ `// // // -_)/ _ \/ _ `/
+echo \___/ \___/ /_/|_| \__/ \_, / \_,_/ \__//_//_/\_,_/ 
+echo                    /_/                        
+echo                   /_/    
+
 
 ::##############
 :: MENU GRÁFICO
