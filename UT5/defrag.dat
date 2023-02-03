@@ -1,0 +1,64 @@
+Optimizador de unidad de Microsoft
+Copyright (c) 2013 Microsoft Corp.
+
+Invocando a an lisis en (C:)...
+
+
+
+	An lisis:  0% completado...
+	An lisis:  62% completado...
+	An lisis:  63% completado...
+	An lisis:  65% completado...
+	An lisis:  70% completado...
+	An lisis:  71% completado...
+	An lisis:  79% completado...
+	An lisis:  91% completado...
+	An lisis: 100% completado.  
+
+La operaci¢n se complet¢ correctamente.
+
+Post Defragmentation Report:
+
+
+	Informaci¢n de volumen:
+		Tama€o del volumen                 = 59,50 GB
+		Tama€o de cl£ster                = 4 KB
+		Espacio usado                  = 8,96 GB
+		Espacio disponible                  = 50,54 GB
+
+
+	Fragmentaci¢n:
+		Espacio total fragmentado      = 10%
+		Promedio de fragmentos por archivo  = 1,02
+
+		Archivos y carpetas que pueden moverse   = 70578
+		Archivos y carpetas que no pueden moverse = 6
+
+
+	Archivos:
+		Archivos fragmentados            = 534
+		Cantidad de fragmentos de archivo        = 1603
+
+
+	Carpetas:
+		Cantidad de carpetas               = 4407
+		Carpetas fragmentadas          = 46
+		Cantidad de fragmentos de carpeta      = 118
+
+
+	Espacio disponible:
+		Cantidad de espacio disponible            = 442
+		Promedio de tama€o de espacio disponible     = 116,64 MB
+		Tama€o m s grande de espacio disponible     = 49,37 GB
+
+
+	Tabla maestra de archivos (MFT):
+		Tama€o de MFT                    = 97,50 MB
+		Cuenta de registros de MFT            = 99839
+		Uso de MFT                   = 100%
+		Cantidad de fragmentos de MFT         = 2
+
+	Nota: los fragmentos de archivo con tama€o superior a 64 MB no se incluir n en las estad¡sticas de fragmentaci¢n.
+
+
+	Este volumen no necesita desfragmentaci¢n.
