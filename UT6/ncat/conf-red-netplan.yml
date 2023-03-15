@@ -1,0 +1,32 @@
+# This is the network config written by 'subiquity'
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp0s3:
+      dhcp4: false
+      addresses:
+       - 192.168.0.251/24
+      routes:
+       - to: default
+         via: 192.168.0.1
+      nameservers:
+        addresses: [192.168.0.1]
+-----------------------------------
+Netplan con 2 ips en una interfaz
+# This is the network config written by 'subiquity'
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp0s3:
+      dhcp4: false
+      addresses: [192.168.0.50/24,192.168.0.51/24]
+      routes:
+        - to: default
+          via: 192.168.0.1
+      nameservers:
+        addresses: [8.8.8.8, 8.8.4.4]
+        
+# A partir de ubuntu 22
+# la directiva gateway4: 192.168.0.1 esta en  desuso
