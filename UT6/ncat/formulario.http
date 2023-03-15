@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+
+<html>
+  <body>
+   <form name="input" action="html_form_action.php" method="post">
+     Username: <input type="text" name="user">
+     <input type="submit" value="Submit">
+   </form>
+  </body>
+</html>
