@@ -1,44 +1,49 @@
-#Crear UOs
+#Crear UOs de departamentos
+dn: ou=depInformatica,dc=sistemas-dam,dc=local
+objectClass: organizationalUnit
+ou: depInformatica
+
 dn: ou=depLogistica,dc=sistemas-dam,dc=local
 objectClass: organizationalUnit
 ou: depLogistica
 
-dn: ou=usuarios,ou=depLogistica,dc=sistemas-dam,dc=local
+dn: ou=usuarios,ou=depInformatica,dc=sistemas-dam,dc=local
 objectClass: organizationalUnit
 ou: usuarios
 
-dn: ou=grupos,ou=depLogistica,dc=sistemas-dam,dc=local
+#Crear UOs de usuarios y grupos dentro de la UO depInformatica
+dn: ou=grupos,ou=depInformatica,dc=sistemas-dam,dc=local
 objectClass: organizationalUnit
 ou: grupos
 
 #Create LDAP Users
-dn: uid=rgallegoc,ou=usuarios,dc=sistemas-dam,dc=local
+dn: uid=rgallegoc,ou=usuarios,ou=depInformatica,dc=sistemas-dam,dc=local
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: top
-cn: Rodrigo Gallego - Logística
+cn: Rodrigo Gallego - Informática
 sn: rgallegoc
-displayName: Rodrigo Gallego - Logística
-givenName: Logística
+displayName: Rodrigo Gallego - Informática
+givenName: Informática
 mail: rgallegoc@sistemas-dam.local
 userPassword: {SSHA}NvtnZjQkiZ/SwJcin6e2I4YIwCylnWGB
 
-dn: uid=jaguilara,ou=usuarios,dc=sistemas-dam,dc=local
+dn: uid=jaguilara,ou=usuarios,ou=depInformatica,dc=sistemas-dam,dc=local
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: top
-cn: Johann Aguilar - Logística
+cn: Johann Aguilar - Informática
 sn: jaguilara
-displayName: Johann Aguilar - Logística
-givenName: Logística
+displayName: Johann Aguilar - Informática
+givenName: Informática
 mail: jaguilara@sistemas-dam.local
 userPassword: {SSHA}NvtnZjQkiZ/SwJcin6e2I4YIwCylnWGB
 
 
 #Grupos Globales
-dn: cn=GGLogistica,ou=grupos,ou=depLogistica,dc=sistemas-dam,dc=local
+dn: cn=GGProgramacion,ou=grupos,ou=depInformatica,dc=sistemas-dam,dc=local
 objectClass: groupOfNames
 objectClass: top
-cn: GGLogistica
-member: uid=jaguilara,ou=usuarios,ou=depLogistica,dc=sistemas-dam,dc=local
-member: uid=rgallecoc,ou=usuarios,ou=depLogistica,dc=sistemas-dam,dc=local
+cn: GGProgramacion
+member: uid=jaguilara,ou=usuarios,ou=depInformatica,dc=sistemas-dam,dc=local
+member: uid=rgallecoc,ou=usuarios,ou=depInformatica,dc=sistemas-dam,dc=local
