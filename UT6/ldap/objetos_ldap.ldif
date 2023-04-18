@@ -36,9 +36,9 @@ userPassword: {SSHA}NvtnZjQkiZ/SwJcin6e2I4YIwCylnWGB
 
 
 #Grupos
-dn: cn=GGLogistica,ou=grupos,dc=sistemas-dam,dc=local
+dn: cn=GGLogistica,ou=grupos,ou=depLogistica,dc=sistemas-dam,dc=local
 objectClass: groupOfNames
 objectClass: top
 cn: GGLogistica
-member: uid=jaguilara,ou=usuarios,dc=sistemas-dam,dc=local
-member: uid=rgallecoc,ou=usuarios,dc=sistemas-dam,dc=local
+member: uid=jaguilara,ou=usuarios,ou=depLogistica,dc=sistemas-dam,dc=local
+member: uid=rgallecoc,ou=usuarios,ou=depLogistica,dc=sistemas-dam,dc=local
