@@ -35,7 +35,7 @@ mail: jaguilara@sistemas-dam.local
 userPassword: {SSHA}NvtnZjQkiZ/SwJcin6e2I4YIwCylnWGB
 
 
-#Grupos
+#Grupos Globales
 dn: cn=GGLogistica,ou=grupos,ou=depLogistica,dc=sistemas-dam,dc=local
 objectClass: groupOfNames
 objectClass: top
