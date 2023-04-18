@@ -1,0 +1,44 @@
+#Crear UOs
+dn: ou=depLogistica,dc=sistemas-dam,dc=local
+objectClass: organizationalUnit
+ou: depLogistica
+
+dn: ou=usuarios,ou=depLogistica,dc=sistemas-dam,dc=local
+objectClass: organizationalUnit
+ou: usuarios
+
+dn: ou=grupos,ou=depLogistica,dc=sistemas-dam,dc=local
+objectClass: organizationalUnit
+ou: grupos
+
+#Create LDAP Users
+dn: uid=rgallegoc,ou=usuarios,dc=sistemas-dam,dc=local
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: top
+cn: Rodrigo Gallego - Logística
+sn: rgallegoc
+displayName: Rodrigo Gallego - Logística
+givenName: Logística
+mail: rgallegoc@sistemas-dam.local
+userPassword: {SSHA}NvtnZjQkiZ/SwJcin6e2I4YIwCylnWGB
+
+dn: uid=jaguilara,ou=usuarios,dc=sistemas-dam,dc=local
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: top
+cn: Johann Aguilar - Logística
+sn: jaguilara
+displayName: Johann Aguilar - Logística
+givenName: Logística
+mail: jaguilara@sistemas-dam.local
+userPassword: {SSHA}NvtnZjQkiZ/SwJcin6e2I4YIwCylnWGB
+
+
+#Grupos
+dn: cn=GGLogistica,ou=grupos,dc=sistemas-dam,dc=local
+objectClass: groupOfNames
+objectClass: top
+cn: GGLogistica
+member: uid=jaguilara,ou=usuarios,dc=sistemas-dam,dc=local
+member: uid=rgallecoc,ou=usuarios,dc=sistemas-dam,dc=local
