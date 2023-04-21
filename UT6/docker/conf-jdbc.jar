@@ -1,0 +1,1 @@
+export CLASSPATH=$CLASSPATH:/home/jcrequena/mariadb-java-client-2.7.4.jar
