@@ -1,7 +1,5 @@
 #
-#Se le concede el acceso a los usuarios del departamento de Logistica que son miembros del grupo GGLogistica
-#
-DEFAULT Ldap-Group == "cn=GGLogistica,ou=grupos,ou=depLogistica,dc=sistemas-dam,dc=local"
-	Reply-Message := "Bienvenid@, %{User-Name}"
-DEFAULT Auth-Type := Reject
-	Reply-Message = "¡No tienes permiso para acceder a la WLAN!"
+#Se le concede el acceso a los usuarios que tengamos adjuntados. 
+#Para este caso, el usuario uradius podrá acceder con la contraseña 'eeepuc20' y el mensaje de bienvenida "Hola, uradius"
+uradius Cleartext-Password := "eeepuc20"
+Reply-Message := "Hola, %{User-Name}"
