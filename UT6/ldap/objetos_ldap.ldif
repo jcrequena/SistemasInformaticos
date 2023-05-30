@@ -35,7 +35,7 @@ sn: user01
 displayName: user01 - Informática
 givenName: Informática
 mail: user01@dam.local
-userPassword: {SSHA}I2ycYiCfLnmFo84xkRKITy1k63TxFqca
+userPassword: {SSHA}w38rc5usDOTWxSvYTZSU0Ddpa1B2/Imo
 
 dn: uid=user02,ou=usuarios,ou=depInformatica,dc=dam,dc=local
 objectClass: inetOrgPerson
@@ -46,7 +46,7 @@ sn: user02
 displayName: user02 - Informática
 givenName: Informática
 mail: user02@dam.local
-userPassword: {SSHA}I2ycYiCfLnmFo84xkRKITy1k63TxFqca
+userPassword: {SSHA}w38rc5usDOTWxSvYTZSU0Ddpa1B2/Imo
 
 dn: uid=user03,ou=usuarios,ou=depLogistica,dc=dam,dc=local
 objectClass: inetOrgPerson
@@ -57,7 +57,7 @@ sn: user03
 displayName: user03 - Logística
 givenName: Logística
 mail: user03@dam.local
-userPassword: {SSHA}I2ycYiCfLnmFo84xkRKITy1k63TxFqca
+userPassword: {SSHA}w38rc5usDOTWxSvYTZSU0Ddpa1B2/Imo
 
 dn: uid=user04,ou=usuarios,ou=depLogistica,dc=dam,dc=local
 objectClass: inetOrgPerson
@@ -68,7 +68,7 @@ sn: user04
 displayName: user04 - Logística
 givenName: Logística
 mail: user04@dam.local
-userPassword: {SSHA}I2ycYiCfLnmFo84xkRKITy1k63TxFqca
+userPassword: {SSHA}w38rc5usDOTWxSvYTZSU0Ddpa1B2/Imo
 
 #Grupos Globales
 dn: cn=GGRedes,ou=grupos,ou=depInformatica,dc=dam,dc=local
