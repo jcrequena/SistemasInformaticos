@@ -31,7 +31,7 @@ gecos: User02 Informática
 loginShell: /bin/bash
 homeDirectory: /home/user02
 
-dn: uid=user03,ou=usuarios,ou=depLogistica,dc=dam,dc=local
+dn: uid=user03,ou=usuarios,ou=depInformatica,dc=dam,dc=local
 objectClass: inetOrgPerson
 objectClass: posixAccount
 objectClass: shadowAccount
@@ -47,7 +47,7 @@ gecos: User03 Informática
 loginShell: /bin/bash
 homeDirectory: /home/user03
 
-dn: uid=user04,ou=usuarios,ou=depLogistica,dc=dam,dc=local
+dn: uid=user04,ou=usuarios,ou=depInformatica,dc=dam,dc=local
 objectClass: inetOrgPerson
 objectClass: posixAccount
 objectClass: shadowAccount
