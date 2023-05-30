@@ -71,12 +71,12 @@ mail: user04@dam.local
 userPassword: {SSHA}I2ycYiCfLnmFo84xkRKITy1k63TxFqca
 
 #Grupos Globales
-dn: cn=GGRedes,ou=grupos,ou=depLogistica,dc=dam,dc=local
+dn: cn=GGRedes,ou=grupos,ou=depInformatica,dc=dam,dc=local
 objectClass: groupOfNames
 objectClass: top
 cn: GGRedes
-member: uid=user03,ou=usuarios,ou=depLogistica,dc=dam,dc=local
-member: uid=user04,ou=usuarios,ou=depLogistica,dc=dam,dc=local
+member: uid=user03,ou=usuarios,ou=depInformatica,dc=dam,dc=local
+member: uid=user04,ou=usuarios,ou=depInformatica,dc=dam,dc=local
 
 dn: cn=GGProgramacion,ou=grupos,ou=depInformatica,dc=dam,dc=local
 objectClass: groupOfNames
