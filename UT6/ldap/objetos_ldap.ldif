@@ -7,11 +7,11 @@ dn: ou=depLogistica,dc=dam,dc=local
 objectClass: organizationalUnit
 ou: depLogistica
 
+#Crear UOs de usuarios y grupos dentro de la UO depInformatica
 dn: ou=usuarios,ou=depInformatica,dc=dam,dc=local
 objectClass: organizationalUnit
 ou: usuarios
 
-#Crear UOs de usuarios y grupos dentro de la UO depInformatica
 dn: ou=grupos,ou=depInformatica,dc=dam,dc=local
 objectClass: organizationalUnit
 ou: grupos
