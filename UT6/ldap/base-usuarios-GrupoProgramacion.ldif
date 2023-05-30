@@ -11,7 +11,6 @@ displayName: User01 Informática
 uidNumber: 10000
 gidNumber: 5001
 userPassword: {SSHA}w38rc5usDOTWxSvYTZSU0Ddpa1B2/Imo
-gecos: User01 Informática
 loginShell: /bin/bash
 homeDirectory: /home/user01
 
@@ -27,7 +26,6 @@ displayName: User02 Informática
 uidNumber: 10002
 gidNumber: 5001
 userPassword: {SSHA}w38rc5usDOTWxSvYTZSU0Ddpa1B2/Imo
-gecos: User02 Informática
 loginShell: /bin/bash
 homeDirectory: /home/user02
 
@@ -43,7 +41,6 @@ displayName: User03 Informática
 uidNumber: 10003
 gidNumber: 5000
 userPassword: {SSHA}w38rc5usDOTWxSvYTZSU0Ddpa1B2/Imo
-gecos: User03 Informática
 loginShell: /bin/bash
 homeDirectory: /home/user03
 
@@ -59,7 +56,6 @@ displayName: User04 Informática
 uidNumber: 10004
 gidNumber: 5000
 userPassword: {SSHA}w38rc5usDOTWxSvYTZSU0Ddpa1B2/Imo
-gecos: User04 Informática
 loginShell: /bin/bash
 homeDirectory: /home/user04
 
