@@ -36,7 +36,7 @@ objectClass: shadowAccount
 uid: user03
 sn: Informática
 givenName: User03
-cn: User03 Logística
+cn: User03 Informática
 displayName: User03 Informática
 uidNumber: 10003
 gidNumber: 5000
