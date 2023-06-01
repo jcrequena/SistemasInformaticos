@@ -1,8 +1,8 @@
 ldap {
-  server= 'radius-openldap.ciber.local'
+  server= 'openldap.dam.local'
   port = 389
-  base_dn = 'ou=DepInformatica,dc=ciber,dc=local'
-  identity = 'cn=admin,dc=ciber,dc=local'
+  base_dn = 'ou=DepInformatica,dc=dam,dc=local'
+  identity = 'cn=admin,dc=dam,dc=local'
   password = 'Camina-100'
 
   sasl {
@@ -16,13 +16,13 @@ ldap {
       reply:              += 'radiusReplyAttribute'
   }
   user {
-      base_dn = "ou=DepInformatica,dc=ciber,dc=local"
+      base_dn = "ou=DepInformatica,dc=dam,dc=local"
       filter = "(uid=%{%{Stripped-User-Name}:-%{User-Name}})"
       sasl {
       }
   }
   group {
-      base_dn = "ou=grupos,ou=DepInformatica,dc=ciber,dc=local"
+      base_dn = "ou=grupos,ou=DepInformatica,dc=dam,dc=local"
       filter = '(objectClass=GroupOfNames)'
       membership_filter = "(|(&(objectClass=GroupOfNames)(member=%{control:Ldap-UserDn}))(&(objectClass=GroupOfNames)(member=%{control:Ldap-UserDn})))"
       membership_attribute = 'memberOf'
