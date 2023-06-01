@@ -1,0 +1,9 @@
+# extended LDIF
+#
+# LDAPv3
+# base <dc=dam,dc=local> with scope subtree
+# filter: (objectclass=*)
+# requesting: ALL
+#
+
+# dam.local
