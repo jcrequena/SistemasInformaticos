@@ -1,0 +1,21 @@
+#Grupos Globales
+#El grupo GGProgramacion tiene como miembros los usuarios user01 y user02
+#El grupo GGRedes tiene como miembros los usuarios user03 y user04
+
+dn: cn=GGProgramacion,ou=grupos,ou=depInformatica,dc=dam,dc=local
+objectClass: posixGroup
+objectClass: groupOfNames
+objectClass: top
+cn: GGProgramacion
+gidNumber: 5000
+member: uid=user01,ou=usuarios,ou=depInformatica,dc=dam,dc=local
+member: uid=user02,ou=usuarios,ou=depInformatica,dc=dam,dc=local
+
+dn: cn=GGRedes,ou=grupos,ou=depInformatica,dc=dam,dc=local
+objectClass: posixGroup
+objectClass: groupOfNames
+objectClass: top
+cn: GGRedes
+gidNumber: 5001
+member: uid=user03,ou=usuarios,ou=depInformatica,dc=dam,dc=local
+member: uid=user04,ou=usuarios,ou=depInformatica,dc=dam,dc=local
