@@ -1,0 +1,11 @@
+#Grupos Globales
+dn: cn=GGRedes,ou=grupos,ou=depInformatica,dc=dam,dc=local
+objectClass: posixGroup
+cn: GGRedes
+gidNumber: 5000
+
+
+dn: cn=GGProgramacion,ou=grupos,ou=depInformatica,dc=dam,dc=local
+objectClass: posixGroup
+cn: GGProgramacion
+gidNumber: 5001
