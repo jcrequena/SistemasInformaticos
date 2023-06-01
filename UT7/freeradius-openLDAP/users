@@ -1,0 +1,8 @@
+#
+#Se le concede el acceso a los usuarios del departamento de Informática que son miembros del grupo GGInformatica
+#
+DEFAULT Ldap-Group == "cn=GGInformatica,ou=grupos,ou=depInformatica,dc=dam,dc=local"
+	Reply-Message := "Bienvenid@, %{User-Name} de Informática"
+  
+DEFAULT Auth-Type := Reject
+	Reply-Message = "¡No tienes permiso para acceder a la WLAN!"
