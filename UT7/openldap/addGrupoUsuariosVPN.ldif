@@ -1,0 +1,5 @@
+dn: cn=GGUsuariosVPN,ou=grupos,ou=depInformatica,dc=dam,dc=local
+objectClass: groupOfNames
+objectClass: top
+cn: GGUsuariosVPN
+member: uid=user05,ou=usuarios,ou=depInformatica,dc=dam,dc=local
