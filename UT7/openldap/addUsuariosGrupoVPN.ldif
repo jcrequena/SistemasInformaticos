@@ -3,7 +3,7 @@ objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: top
 cn: Usuario 05 Informática VPN
-sn: user05
+sn: Informática VPN
 displayName: Informática VPN User05
 givenName: Informática
 mail: user05@dam.local
