@@ -1,0 +1,10 @@
+dn: uid=user05,ou=usuarios,ou=depInformatica,dc=dam,dc=local
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: top
+cn: Usuario 05 Informática VPN
+sn: user05
+displayName: Informática VPN User05
+givenName: Informática
+mail: user05@dam.local
+userPassword: {SSHA}w38rc5usDOTWxSvYTZSU0Ddpa1B2/Imo
