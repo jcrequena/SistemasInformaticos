@@ -44,23 +44,16 @@ dn: ou=usuarios,ou=depInformatica,dc=dam,dc=local
 objectClass: organizationalUnit
 ou: usuarios
 
-# GGRedes, grupos, depInformatica, dam.local
-dn: cn=GGRedes,ou=grupos,ou=depInformatica,dc=dam,dc=local
-objectClass: posixGroup
-cn: GGRedes
-gidNumber: 5001
-
-# GGUsuariosVPN, grupos, depInformatica, dam.local
-dn: cn=GGUsuariosVPN,ou=grupos,ou=depInformatica,dc=dam,dc=local
-objectClass: groupOfNames
-objectClass: top
-cn: GGUsuariosVPN
-member: uid=user05,ou=usuarios,ou=depInformatica,dc=dam,dc=local
-
 # GGProgramacion, grupos, depInformatica, dam.local
 dn: cn=GGProgramacion,ou=grupos,ou=depInformatica,dc=dam,dc=local
 objectClass: posixGroup
 cn: GGProgramacion
+gidNumber: 5000
+
+# GGRedes, grupos, depInformatica, dam.local
+dn: cn=GGRedes,ou=grupos,ou=depInformatica,dc=dam,dc=local
+objectClass: posixGroup
+cn: GGRedes
 gidNumber: 5001
 
 # user01, usuarios, depInformatica, dam.local
