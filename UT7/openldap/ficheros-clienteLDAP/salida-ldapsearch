@@ -1,0 +1,131 @@
+# extended LDIF
+#
+# LDAPv3
+# base <dc=dam,dc=local> with scope subtree
+# filter: (objectclass=*)
+# requesting: ALL
+#
+
+# dam.local
+dn: dc=dam,dc=local
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+o: dam
+dc: dam
+
+# depLogistica, dam.local
+dn: ou=depLogistica,dc=dam,dc=local
+objectClass: organizationalUnit
+ou: depLogistica
+
+# depInformatica, dam.local
+dn: ou=depInformatica,dc=dam,dc=local
+objectClass: organizationalUnit
+ou: depInformatica
+
+# grupos, depLogistica, dam.local
+dn: ou=grupos,ou=depLogistica,dc=dam,dc=local
+objectClass: organizationalUnit
+ou: grupos
+
+# usuarios, depLogistica, dam.local
+dn: ou=usuarios,ou=depLogistica,dc=dam,dc=local
+objectClass: organizationalUnit
+ou: usuarios
+
+# grupos, depInformatica, dam.local
+dn: ou=grupos,ou=depInformatica,dc=dam,dc=local
+objectClass: organizationalUnit
+ou: grupos
+
+# usuarios, depInformatica, dam.local
+dn: ou=usuarios,ou=depInformatica,dc=dam,dc=local
+objectClass: organizationalUnit
+ou: usuarios
+
+# GGRedes, grupos, depInformatica, dam.local
+dn: cn=GGRedes,ou=grupos,ou=depInformatica,dc=dam,dc=local
+objectClass: posixGroup
+cn: GGRedes
+gidNumber: 5001
+
+# GGUsuariosVPN, grupos, depInformatica, dam.local
+dn: cn=GGUsuariosVPN,ou=grupos,ou=depInformatica,dc=dam,dc=local
+objectClass: groupOfNames
+objectClass: top
+cn: GGUsuariosVPN
+member: uid=user05,ou=usuarios,ou=depInformatica,dc=dam,dc=local
+
+# GGProgramacion, grupos, depInformatica, dam.local
+dn: cn=GGProgramacion,ou=grupos,ou=depInformatica,dc=dam,dc=local
+objectClass: posixGroup
+cn: GGProgramacion
+gidNumber: 5001
+
+# user01, usuarios, depInformatica, dam.local
+dn: uid=user01,ou=usuarios,ou=depInformatica,dc=dam,dc=local
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: user01
+sn:: SW5mb3Jtw6F0aWNh
+cn:: VXNlcjAxIEluZm9ybcOhdGljYQ==
+displayName:: VXNlcjAxIEluZm9ybcOhdGljYQ==
+uidNumber: 10000
+gidNumber: 5000
+loginShell: /bin/bash
+homeDirectory: /home/user01
+givenName:: VXN1YXJpbyAwMSAtIERlcC5JbmZvcm3DoXRpY2E=
+
+# user02, usuarios, depInformatica, dam.local
+dn: uid=user02,ou=usuarios,ou=depInformatica,dc=dam,dc=local
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: user02
+sn:: SW5mb3Jtw6F0aWNh
+givenName: User02
+cn:: VXNlcjAyIEluZm9ybcOhdGljYQ==
+displayName:: VXNlcjAyIEluZm9ybcOhdGljYQ==
+uidNumber: 10002
+gidNumber: 5000
+loginShell: /bin/bash
+homeDirectory: /home/user02
+
+# user03, usuarios, depInformatica, dam.local
+dn: uid=user03,ou=usuarios,ou=depInformatica,dc=dam,dc=local
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: user03
+sn:: SW5mb3Jtw6F0aWNh
+givenName: User03
+cn:: VXNlcjAzIEluZm9ybcOhdGljYQ==
+displayName:: VXNlcjAzIEluZm9ybcOhdGljYQ==
+uidNumber: 10003
+gidNumber: 5001
+loginShell: /bin/bash
+homeDirectory: /home/user03
+
+# user04, usuarios, depInformatica, dam.local
+dn: uid=user04,ou=usuarios,ou=depInformatica,dc=dam,dc=local
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: user04
+sn:: SW5mb3Jtw6F0aWNh
+givenName: User04
+cn:: VXNlcjA0IEluZm9ybcOhdGljYQ==
+displayName:: VXNlcjA0IEluZm9ybcOhdGljYQ==
+uidNumber: 10004
+gidNumber: 5001
+loginShell: /bin/bash
+homeDirectory: /home/user04
+
+# search result
+search: 2
+result: 0 Success
+
+# numResponses: 16
+# numEntries: 15
