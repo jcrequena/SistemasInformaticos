@@ -7,4 +7,5 @@ foreach ($user in $file_users) {
   New-LocalUser $user.cuenta -Password $clave -Description $user.descripcion -AccountNeverExpires -PasswordNeverExpires
   #Añadimos la cuenta de usuario en el grupo de Usuarios del sistema
   Add-LocalGroupMember -Group usuarios -Member $user.cuenta
+  Write-Host "Usuario $user.cuenta creado"
 }
