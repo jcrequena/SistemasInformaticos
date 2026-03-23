@@ -1,4 +1,4 @@
-#alta_Grupos.ps1 : Parámetro 1 el dc (nombre netbios del dominio) parámetro 2 el sufijo del dominio
+#alta_Grupos.ps1 : 
 #Referencia: https://technet.microsoft.com/en-us/library/ee617258.aspx
 #El fichero csv que leemos es:
 #Name:Path:Description:Category:Scope
